@@ -5,8 +5,8 @@ from django.shortcuts import render
 
 
 urlpatterns = [
-    path('contact', ContactCreateView.as_view()),
-    path('register', RegistrationCreateView.as_view()),
-    path('export', getfile),
+    path('contact', ContactCreateView.as_view(), name='contact'),
+    path('register', RegistrationCreateView.as_view(), name='register'),
+    #path('export', getfile),
     path("", home)
 ]
