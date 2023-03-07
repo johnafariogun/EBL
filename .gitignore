@@ -5,7 +5,7 @@ __pycache__/
 git_.sh
 # C extensions
 *.so
-staticfiles/*
+
 # Distribution / packaging
 .Python
 build/
