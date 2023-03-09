@@ -1,5 +1,6 @@
 from django.db import models
 
+from django.core.validators import MinLengthValidator
 # Create your models here.
 state_choices = (
     ('Abia', 'Abia'),
@@ -62,12 +63,12 @@ faculty_choices = (
 
 
 level_choices=(
-    ('1', '100 Level'),
-    ('2', '200 level'),
-    ('3', '300 level'),
-    ('4', '400 level'),
-    ('5', '500 level'),
-    ('6', '600 level'),
+    ('100', '100 Level'),
+    ('200', '200 level'),
+    ('300', '300 level'),
+    ('400', '400 level'),
+    ('500', '500 level'),
+    ('600', '600 level'),
     ('other', '> 600 level')
 )
 class Registration(models.Model):
@@ -80,7 +81,7 @@ class Registration(models.Model):
     department = models.CharField(max_length=150)
     level = models.CharField(max_length=30, choices=level_choices)
     date_of_birth = models.DateField()
-    phone_number = models.CharField(max_length=11)
+    phone_number = models.CharField(max_length=11,validators=[MinLengthValidator(11)])
 
     def __str__(self):
         return f"{self.first_name} {self.middle_name} {self.last_name}"
