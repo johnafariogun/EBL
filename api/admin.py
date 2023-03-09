@@ -8,5 +8,6 @@ class RegistrationAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('email', 'faculty', 'level')
     list_filter = ('faculty', 'department', 'level')
     search_fields = ('faculty', 'department', 'level', 'first_name', 'middle_name', 'last_name')
+    list_per_page = 20
 
 admin.site.register(Registration, RegistrationAdmin)
