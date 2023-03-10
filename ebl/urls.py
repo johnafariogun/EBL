@@ -41,3 +41,7 @@ urlpatterns = [
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     
 ]
+
+admin.site.site_header  =  "EBL Registration admin"
+admin.site.site_title  =  "EBL Registration admin site"
+admin.site.index_title  =  "EBL Registration Admin"
