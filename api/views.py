@@ -14,6 +14,7 @@ class ContactCreateView(generics.CreateAPIView):
 class RegistrationCreateView(generics.CreateAPIView):
     queryset = Registration.objects.all()
     serializer_class = RegistrationSerializer
+    
 
 def home(request):
     return render(request, 'home.html')
