@@ -52,11 +52,11 @@ faculty_choices = (
         ('Engineering', 'Engineering'),
         ('Environmental Sciences', 'Environmental Sciences'),
         ('Law', 'Law'),
+        ('Life Sciences', 'Life Sciences'),
         ('Management Science', 'Management Science'),
         ('Pharmacy', 'Pharmacy'),
         ('Physical Science', 'Physical Science'),
         ('Social Science', 'Social Science'),
-        ('School of Medical Sciences', 'School of Medical Sciences'),
         ('College of Medicine', 'College of Medicine'),
         ('Veterinary Medicine', 'Veterinary Medicine')
 )
@@ -73,7 +73,7 @@ level_choices=(
 )
 class Registration(models.Model):
     first_name = models.CharField(max_length = 150)
-    middle_name = models.CharField(max_length = 150)
+    middle_name = models.CharField(max_length = 150, blank=True, null=True)
     last_name = models.CharField(max_length = 150)
     email = models.EmailField()
     state_of_Residence = models.CharField(max_length=15, choices=state_choices, default='Edo')
