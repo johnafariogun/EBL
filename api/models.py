@@ -76,11 +76,11 @@ class Registration(models.Model):
     middle_name = models.CharField(max_length = 150, blank=True, null=True)
     last_name = models.CharField(max_length = 150)
     email = models.EmailField()
-    state_of_Residence = models.CharField(max_length=15, choices=state_choices, default='Edo')
+    # state_of_Residence = models.CharField(max_length=15, choices=state_choices, default='Edo')
     faculty = models.CharField(max_length=30, choices=faculty_choices)
     department = models.CharField(max_length=150)
     level = models.CharField(max_length=30, choices=level_choices)
-    date_of_birth = models.DateField()
+    # date_of_birth = models.DateField()
     phone_number = models.CharField(max_length=11,validators=[MinLengthValidator(11)])
 
     def __str__(self):
