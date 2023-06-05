@@ -58,7 +58,8 @@ faculty_choices = (
         ('Physical Science', 'Physical Science'),
         ('Social Science', 'Social Science'),
         ('College of Medicine', 'College of Medicine'),
-        ('Veterinary Medicine', 'Veterinary Medicine')
+        ('Veterinary Medicine', 'Veterinary Medicine'),
+    ('Nil', 'Nil')
 )
 
 
@@ -69,7 +70,13 @@ level_choices=(
     ('400', '400 level'),
     ('500', '500 level'),
     ('600', '600 level'),
-    ('other', '> 600 level')
+    ('other', '> 600 level'),
+    ('Nil', 'Nil')
+)
+
+is_student=(
+    ('1', 'Yes'),
+    ('0', 'No')
 )
 class Registration(models.Model):
     first_name = models.CharField(max_length = 150)
@@ -80,7 +87,7 @@ class Registration(models.Model):
     faculty = models.CharField(max_length=30, choices=faculty_choices)
     department = models.CharField(max_length=150)
     level = models.CharField(max_length=30, choices=level_choices)
-    # date_of_birth = models.DateField()
+    is_student = models.CharField(max_length=4, choices=is_student, default='Yes')
     phone_number = models.CharField(max_length=11,validators=[MinLengthValidator(11)])
 
     def __str__(self):
