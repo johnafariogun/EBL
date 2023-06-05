@@ -59,7 +59,6 @@ faculty_choices = (
         ('Social Science', 'Social Science'),
         ('College of Medicine', 'College of Medicine'),
         ('Veterinary Medicine', 'Veterinary Medicine'),
-    ('Nil', 'Nil')
 )
 
 
@@ -71,22 +70,20 @@ level_choices=(
     ('500', '500 level'),
     ('600', '600 level'),
     ('other', '> 600 level'),
-    ('Nil', 'Nil')
 )
 
 is_student=(
-    ('1', 'Yes'),
-    ('0', 'No')
+    ('Yes', 'Yes'),
+    ('No', 'No')
 )
 class Registration(models.Model):
     first_name = models.CharField(max_length = 150)
     middle_name = models.CharField(max_length = 150, blank=True, null=True)
     last_name = models.CharField(max_length = 150)
     email = models.EmailField()
-    # state_of_Residence = models.CharField(max_length=15, choices=state_choices, default='Edo')
-    faculty = models.CharField(max_length=30, choices=faculty_choices)
-    department = models.CharField(max_length=150)
-    level = models.CharField(max_length=30, choices=level_choices)
+    faculty = models.CharField(max_length=30, choices=faculty_choices , blank=True, null=True)
+    department = models.CharField(max_length=150, blank=True, null=True)
+    level = models.CharField(max_length=30, choices=level_choices, blank=True, null=True)
     is_student = models.CharField(max_length=4, choices=is_student, default='Yes')
     phone_number = models.CharField(max_length=11,validators=[MinLengthValidator(11)])
 
